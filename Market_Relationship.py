@@ -43,9 +43,35 @@ def virus_data():
     date_index = [datetime.strptime(x, '%Y-%m-%d') for x in date_index]
     virus_df = pd.DataFrame(virus_data.values(), index=date_index,
                             columns=['number_of_cases'])
+    virus_df.index.name = 'Date'
     virus_df_norm = virus_df/virus_df.iloc[0]
 
-    return virus_df_norm
+    return virus_df
+
+def market_virus_plot:
+    market_df = stock_market_data()
+    virus_df = virus_data()
+    time = market_df.index
+    fig, ax1 = plt.subplots()
+
+    color = 'tab:red'
+    ax1.set_xlabel('Date')
+    ax1.set_ylabel('Normalized_Market_Values', color=color)
+    ax1.plot(time, market_df.iloc[:,0], color=color, label='SPY-CLOSE')
+    ax1.plot(time, market_df.iloc[:,1], color='orange', label='MCHI-CLOSE')
+    ax1.tick_params(axis='y', labelcolor=color)
+    ax1.legend()
+
+
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+    color = 'tab:blue'
+    ax2.set_ylabel('Number of Cases', color=color)  # we already handled the x-label with ax1
+    ax2.plot(time, virus_df, color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    plt.show()
 
 
 def main():
