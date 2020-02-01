@@ -48,7 +48,7 @@ def virus_data():
 
     return virus_df
 
-def market_virus_plot:
+def market_virus_plot():
     market_df = stock_market_data()
     virus_df = virus_data()
     time = market_df.index
@@ -67,7 +67,7 @@ def market_virus_plot:
 
     color = 'tab:blue'
     ax2.set_ylabel('Number of Cases', color=color)  # we already handled the x-label with ax1
-    ax2.plot(time, virus_df, color=color)
+    ax2.plot(virus_df.index, virus_df, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
