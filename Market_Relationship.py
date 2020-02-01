@@ -9,6 +9,8 @@ Created on Thu Jan 30 23:10:46 2020
 import pandas as pd
 import yfinance as yf
 from datetime import datetime
+import matplotlib
+import matplotlib.pyplot as plt
 
 def stock_market_data():
     iShares_China_ETF = yf.Ticker('MCHI')
@@ -57,8 +59,8 @@ def market_virus_plot():
     color = 'tab:red'
     ax1.set_xlabel('Date')
     ax1.set_ylabel('Normalized_Market_Values', color=color)
-    ax1.plot(time, market_df.iloc[:,0], color=color, label='SPY-CLOSE')
-    ax1.plot(time, market_df.iloc[:,1], color='orange', label='MCHI-CLOSE')
+    ax1.plot(market_df.index, market_df.iloc[:,0], color=color, label='SPY-CLOSE')
+    ax1.plot(market_df.index, market_df.iloc[:,1], color='orange', label='MCHI-CLOSE')
     ax1.tick_params(axis='y', labelcolor=color)
     ax1.legend()
 
@@ -71,6 +73,9 @@ def market_virus_plot():
     ax2.tick_params(axis='y', labelcolor=color)
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    fig.autofmt_xdate()
+    plt.savefig('Screenshots/Market_Virus_Relationship.png', dpi=72,
+                    bbox_inches='tight')
     plt.show()
 
 
@@ -80,6 +85,7 @@ def main():
     finaldf = pd.concat([market_df, virus_df], axis=1)
     market_df.plot()
     virus_df.plot()
+    market_virus_plot()
 
 
 if __name__ == '__main__':
