@@ -1,7 +1,7 @@
-# StockMarket X Coronavirus Relationship 
+# StockMarket VS. Coronavirus Relationship 
 
 ## Abstract:
-The purpose of this script is to determine how the markets are reacting to the recent coronavirus outbreak. The script currently looks at two markets the **SPY**(Designed to track the S&P 500 stock market index. This fund is the largest ETF in the world). As well as the **MCHI** iShares China ETF(Designed to track the large and mid-sized companies in China. This ETF seeks to track the investment results of an index composed of Chinese equities that are available to international investors.)
+The purpose of this script is to measure the effect the epidemic coronavirus is having on the global stock markets. The script currently looks at two markets the **SPY**(Designed to track the S&P 500 stock market index. This fund is the largest ETF in the world). As well as the **MCHI** iShares China ETF(Designed to track the large and mid-sized companies in China. This ETF seeks to track the investment results of an index composed of Chinese equities that are available to international investors.)
 
 ## Running The Script:
 To Run this scipt simply download the .py file titled "Market_Relationship.py". After the python file has been successfully downloaded, ensure Python has the following modules installed: Pandas, Matplotlib, yfinance. If any of these modules are missing, please go to terminal and install them using the pip command: "pip install pandas" , "pip install matplotlib", "pip install yfinance". 
