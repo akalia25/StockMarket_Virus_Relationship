@@ -1,4 +1,4 @@
-# StockMarket_Virus_Relationship
+# StockMarket X Coronavirus Relationship 
 
 ## Abstract:
 The purpose of this script is to determine how the markets are reacting to the recent coronavirus outbreak. The script currently looks at two markets the **SPY**(Designed to track the S&P 500 stock market index. This fund is the largest ETF in the world). As well as the **MCHI** iShares China ETF(Designed to track the large and mid-sized companies in China. This ETF seeks to track the investment results of an index composed of Chinese equities that are available to international investors.)
