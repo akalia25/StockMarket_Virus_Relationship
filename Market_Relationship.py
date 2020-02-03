@@ -12,6 +12,7 @@ from datetime import datetime
 import matplotlib
 import matplotlib.pyplot as plt
 
+
 def stock_market_data():
     iShares_China_ETF = yf.Ticker('MCHI')
     iShares_China_ETF_df = iShares_China_ETF.history(period='1mo')
@@ -34,12 +35,14 @@ def stock_market_data():
 
     return normalized_market
 
+
 def virus_data():
     # Data Obtained from https://www.worldometers.info/coronavirus/
     virus_data = {'2020-01-21': 446, '2020-01-22': 579, '2020-01-23': 844,
             '2020-01-24': 1312, '2020-01-25': 2015, '2020-01-26': 2801,
             '2020-01-27': 4579, '2020-01-28': 6061, '2020-01-29': 7816,
-            '2020-01-30': 9821, '2020-01-31': 11948, '2020-02-01': 14551}
+            '2020-01-30': 9821, '2020-01-31': 11948, '2020-02-01': 14551,
+            '2020-02-02': 17387}
 
     date_index = virus_data.keys()
     date_index = [datetime.strptime(x, '%Y-%m-%d') for x in date_index]
@@ -49,6 +52,7 @@ def virus_data():
     virus_df_norm = virus_df/virus_df.iloc[0]
 
     return virus_df
+
 
 def market_virus_plot():
     market_df = stock_market_data()
