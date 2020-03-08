@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 def stock_market_data():
     iShares_China_ETF = yf.Ticker('MCHI')
-    iShares_China_ETF_df = iShares_China_ETF.history(period='1mo')
+    iShares_China_ETF_df = iShares_China_ETF.history(period='6mo')
     iShares_China_ETF_df = iShares_China_ETF_df.loc[:, ['Close']]
     iShares_China_ETF_df = iShares_China_ETF_df.rename(columns={'Close':
                                                                 'MCHI-CLOSE'})
@@ -23,7 +23,7 @@ def stock_market_data():
                                                     >= '2020-01-21']
 
     SPY = yf.Ticker('SPY')
-    SPY_df = SPY.history(period='1mo')
+    SPY_df = SPY.history(period='6mo')
     SPY_df.loc[:, 'StockName'] = 'SPY'
     SPY_df = SPY_df[['Close']]
     SPY_df = SPY_df.rename(columns={'Close': 'SPY-CLOSE'})
@@ -45,7 +45,15 @@ def virus_data():
             '2020-02-02': 17387, '2020-02-03': 20626, '2020-02-04': 24553,
             '2020-02-05': 28276, '2020-02-06': 31439, '2020-02-07': 34876,
             '2020-02-08': 37552, '2020-02-09': 40553, '2020-02-10': 43099,
-            '2020-02-11': 44919, '2020-02-12': 60326}
+            '2020-02-11': 44919, '2020-02-12': 60326, '2020-02-13': 64438,
+            '2020-02-14': 67100, '2020-02-15': 69197, '2020-02-16':71329,
+            '2020-02-17': 73332, '2020-02-18': 75184, '2020-02-19': 75700,
+            '2020-02-20': 76677, '2020-02-21': 77673, '2020-02-22': 78651,
+            '2020-02-23': 79205, '2020-02-24': 80087, '2020-02-25': 80828,
+            '2020-02-26': 81820, '2020-02-27': 83112, '2020-02-28': 84615,
+            '2020-02-29': 86604, '2020-03-01': 88581, '2020-03-02': 90439,
+            '2020-03-03': 93012, '2020-03-04': 95315, '2020-03-05': 98424,
+            '2020-03-06': 102049}
 
     date_index = virus_data.keys()
     date_index = [datetime.strptime(x, '%Y-%m-%d') for x in date_index]
