@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/Users/addy/opt/anaconda3/bin/python3
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jan 30 23:10:46 2020
@@ -89,7 +89,7 @@ def market_virus_plot():
 
     color = 'tab:blue'
     ax2.set_ylabel('Number of Cases', color=color)  # we already handled the x-label with ax1
-    ax2.plot(virus_df.index, virus_df, color=color)
+    #ax2.plot(virus_df.index, virus_df, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
