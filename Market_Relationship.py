@@ -6,11 +6,11 @@ Created on Thu Jan 30 23:10:46 2020
 @author: adityakalia
 """
 
+from datetime import datetime
+
+import matplotlib.pyplot as plt
 import pandas as pd
 import yfinance as yf
-from datetime import datetime
-import matplotlib
-import matplotlib.pyplot as plt
 
 
 def stock_market_data():
